@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR Image Target Generator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Generate custom AR image targets for augmented reality applications with our easy-to-use online tool. Customize size, aspect ratio, border, background, style, and colors to create effective image markers for your AR projects."
+    />
+    <meta
+      name="keywords"
+      content="AR, XR, MR, augmented reality, mixed reality, extended reality, vuforia, unity, image target, marker generator, AR marker, AR image target generator, augmented reality marker, image marker, AR tools, custom image target"
+    />
+    <meta name="author" content="Sascha Lange" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AR Image Target Generator" />
+    <meta
+      property="og:description"
+      content="Generate custom AR image targets for augmented reality applications with our easy-to-use online tool."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://image-target-generator.github.io/"
+    />
+    <meta
+      property="og:image"
+      content="https://image-target-generator.github.io/images/og-image.png"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AR Image Target Generator" />
+    <meta
+      name="twitter:description"
+      content="Generate custom AR image targets for augmented reality applications with our easy-to-use online tool."
+    />
+    <meta
+      name="twitter:image"
+      content="https://image-target-generator.github.io/images/twitter-image.png"
+    />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>" /></link>
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+  </head>
+  <body>
+    <nav class="uk-navbar-container">
+      <div class="uk-container">
+        <div uk-navbar>
+          <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="index.html"> ⚡ AR Image Target Generator</a>
+              </li>
+              <li class="uk-active">
+                <a href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a
+                  uk-icon="icon: github"
+                  href="https://github.com/SaschaLange/Image-Target-Generator"
+                  >Github</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="uk-padding uk-child-width-1-1"
+      uk-grid
+      uk-height-match="target: > div > .uk-card"
+    >
+      <!-- About Card -->
+      <div>
+        <div class="uk-card uk-card-default uk-width-1-1">
+          <div class="uk-card-body">
+            <article class="uk-article">
+              <h1 class="uk-article-title">AR Image Target Generator</h1>
+
+              <p class="uk-article-meta">
+                Written by Sascha Lange on 13 October 2024.
+              </p>
+
+              <p class="uk-text-lead">
+                A tool designed to simplify the creation of high-quality image
+                markers for augmented reality applications.
+              </p>
+
+              <p>
+                Finding suitable images with good tracking performance for
+                marker-based AR/MR projects can be time-consuming and
+                challenging. Images need to have high contrast, a high feature
+                count, and a homogeneous feature distribution to ensure reliable
+                tracking.
+              </p>
+
+              <p>
+                In 2023, during my master's thesis on Augmented Reality Task
+                Assistance in Life Science Laboratories, while developing an AR
+                application for the HoloLens 2 using the
+                <a
+                  href="https://developer.vuforia.com/library/objects/image-targets"
+                  >Vuforia SDK's Image Target</a
+                >
+                feature, I encountered this very problem.
+              </p>
+
+              <p>
+                Fortunately, I came across a
+                <a
+                  href="https://www.dariomazzanti.com/uncategorized/ar-image-target-generation-vuforia/"
+                  >blog post by Dario Mazzanti from 2014</a
+                >, which provided a Processing sketch to generate markers
+                meeting all these requirements. With some tweaking, I was able
+                to create a marker that matched my desired aspect ratio and
+                incorporated my product colors.
+              </p>
+
+              <p>
+                While this code was helpful, I had to spend time understanding
+                the marker generation algorithm and how to tweak it.
+                Additionally, I needed to download and install
+                <a href="https://processing.org/">Processing</a> and re-run the
+                program every time I wanted to generate and save a single
+                marker. This process was cumbersome and time-consuming.
+              </p>
+
+              <p>
+                This experience inspired me to develop this AR Image Target
+                Generator, making marker generation and customization easily
+                accessible. Whether you're working on quick prototypes or larger
+                projects requiring multiple markers across various scenes, this
+                tool helps you create high-quality image targets effortlessly.
+                You can customize markers with random colors or align them with
+                your brand identity using your specific product colors—all
+                without needing to get into code or graphic design programs.
+              </p>
+
+              <p class="uk-text-lead">A quick how-to guide:</p>
+
+              <ul>
+                <li>
+                  Set the pixel size of the longest image edge. (Height or
+                  Width)‚
+                </li>
+                <li>
+                  Choose the aspect ratio of your markers. (1:1, 4:3, 16:9)
+                </li>
+                <li>Choose the border-style. (None, Black, White)</li>
+                <li>
+                  Choose between three grpahic styles (Mazzanti, Chaos, Dot
+                  Matrix)
+                </li>
+                <li>
+                  Choose a background color. (Black or white, only relevant for
+                  Chaos and Dot Matrix style)
+                </li>
+                <li>
+                  Randomize the colors or use your own colors for the marker.
+                </li>
+              </ul>
+              <p>
+                In the results section, you can see the number of features
+                detected in the generated marker using the
+                <a
+                  href="https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html"
+                  >OpenCV ORB</a
+                >
+                algorithm. This metric provides an estimate of the marker's
+                quality and tracking performance, allowing you to effectively
+                compare different generated markers.
+              </p>
+
+              <p class="uk-text-lead">Acknowledgements:</p>
+
+              <p>
+                I would like to express my gratitude to Dario Mazzanti for
+                sharing his insightful blog post and Processing sketch with the
+                public. His work enabled me to conduct my AR research and
+                significantly influenced the creation of this tool. In honor of
+                his contribution, the "Mazzanti" style option in this generator
+                is named after him, as its implementation incorporates elements
+                of his original Processing sketch.
+              </p>
+
+              <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                <div>
+                  <a
+                    class="uk-button uk-button-text"
+                    href="https://www.linkedin.com/in/contact-with-saschalange/"
+                    >Get in Touch</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
